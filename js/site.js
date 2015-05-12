@@ -3,7 +3,7 @@
 
 
 // Angular
-angular.module('SchoolModule', ['ngRoute'])
+angular.module('SchoolModule', ['ngRoute', 'ngAnimate'])
 
 .config(['$routeProvider', function ($routeProvider) {
 
@@ -34,8 +34,7 @@ angular.module('SchoolModule', ['ngRoute'])
             redirectTo: '/allcourses'
         });
 }])
-
-.controller('SchoolController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+.controller('SchoolController', ['$scope', '$http', '$routeParams', '$animate', function ($scope, $http, $routeParams, $animate) {
 
     // All Courses
     $scope.allcourses = [];
