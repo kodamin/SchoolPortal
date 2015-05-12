@@ -8,7 +8,7 @@ angular.module('SchoolModule', ['ngRoute'])
 .config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
-        .when('./allcourses',
+        .when('/allcourses',
         {
             templateUrl: './partials/AllCourses.html',
             controller: 'SchoolController'
@@ -31,7 +31,7 @@ angular.module('SchoolModule', ['ngRoute'])
         })
         .otherwise(
         {
-            redirectTo: './allcourses'
+            redirectTo: '/allcourses'
         });
 }])
 
