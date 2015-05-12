@@ -3,30 +3,30 @@
 
 
 // Angular
-angular.module('SchoolModule', ['ngRoute'])
+angular.module('SchoolModule', ['ngRoute', 'ngAnimate'])
 
 .config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
         .when('/allcourses',
         {
-            templateUrl: '/partials/AllCourses.html',
+            templateUrl: './partials/AllCourses.html',
             controller: 'SchoolController'
         })
         .when('/mycourses',
         {
-            templateUrl: '/partials/MyCourses.html',
+            templateUrl: './partials/MyCourses.html',
             controller: 'SchoolController'
         })
         .when('/course/:id', {
-            templateUrl: '/partials/CourseDetails.html',
+            templateUrl: './partials/CourseDetails.html',
             controller: 'SchoolController'
         })
         .when('/about', {
-            templateUrl: '/partials/About.html'
+            templateUrl: './partials/About.html'
         })
         .when('/contact', {
-            templateUrl: '/partials/Contact.html',
+            templateUrl: './partials/Contact.html',
             controller: 'SchoolController'
         })
         .otherwise(
@@ -34,8 +34,7 @@ angular.module('SchoolModule', ['ngRoute'])
             redirectTo: '/allcourses'
         });
 }])
-
-.controller('SchoolController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+.controller('SchoolController', ['$scope', '$http', '$routeParams', '$animate', function ($scope, $http, $routeParams, $animate) {
 
     // All Courses
     $scope.allcourses = [];
